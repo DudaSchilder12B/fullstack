@@ -10,6 +10,10 @@ app.get("/", (request, response) => {
     response.json(people)
 })
 
+app.post("/cadastrar", (request, response) => {
+    console.log(request.body)
+})
+
 app.listen(port, () => {
     console.log(`Servidor rodando na porta: ${port}`)
     

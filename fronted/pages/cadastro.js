@@ -6,7 +6,8 @@ function sendUser(event) {
     const name = document.querySelector("#name").value
     const email = document.querySelector("#email").value
     const password = document.querySelector("#password").value
-    if (name === "" || email === "" || password === "") {
+    const age = document.querySelector("#age").value
+    if (name === "" || email === "" || password === ""  || age === "") {
         alert("Preencha todas as informações!")
         return
     }
@@ -14,8 +15,15 @@ function sendUser(event) {
     const user = {
         name,
         email,
+        age,
         password
     }
 
-    console.log(user)
+    fetch("http://localhost:3333/cadastrar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ user })
+    })
 }

@@ -9,7 +9,7 @@ users.map(user => {
  main.innerHTML += `
   <section>
             <h3>Nome: ${user.name}</h3>
-            <p>Idade: ${user.age}</p>
+            <p>Idade: ${user.age} anos</p>
             <p>E-mail: ${user.email}</p>
         </section>
         `
